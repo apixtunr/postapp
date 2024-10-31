@@ -1,0 +1,35 @@
+<div class="search-form">
+    <mat-form-field appearance="outline" class="search-input">
+        <mat-label>Ingrese el nombre del Post</mat-label>
+        <input matInput [(ngModel)]="nombre">
+
+        <button mat-button matSuffix color="primary" (click)="searchByName()"> <mat-icon>search</mat-icon></button>
+    </mat-form-field>
+</div>
+
+<div class = "card-container" *ngFor="let post of allPosts">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{post.nombre}}</mat-card-title>
+                <mat-card-subtitle>Posteado por: {{post.creador}} | Fecha de Publicación: {{post.fecha | date:'medium'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-grid-list cols="5">
+            <mat-grid-tile [colspan]="2" [rowspan]="1">
+                <img mat-card-image [src]="post.imagen" class="post-img" alt="Card Image"/>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="3" [rowspan]="1">
+                <mat-card-content>
+                    {{post.contenido}}
+                </mat-card-content>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <hr>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">{{post.likes}} <mat-icon>favorite</mat-icon></button>
+            <button mat-raised-button color="primary" style="margin-left: 5px;">{{post.vistas}} 
+            <mat-icon>remove_red_eye</mat-icon></button>
+            <button mat-raised-button color="primary" style="margin-left: 5px;" routerLink="/singleviewpost/{{post.id}}">Vista del Post</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

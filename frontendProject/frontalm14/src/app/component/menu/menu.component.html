@@ -1,0 +1,66 @@
+<h1 class="text-center text-primary bg-dark">Operating Systems I (Project)</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="sesionIniciada">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/principal">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!--
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownP" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/listproductos">Listar</a></li>
+            <li><a class="dropdown-item" routerLink="/addproductos">Agregar</a></li>
+          </ul>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownP" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Clientes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/listclientes">Listar</a></li>
+            <li><a class="dropdown-item" routerLink="/addclientes">Agregar</a></li>
+          </ul>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownP" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Proveedores
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/listproveedores">Listar</a></li>
+              <li><a class="dropdown-item" routerLink="/addproveedores">Agregar</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownP" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Post
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/createpost">CrearPost</a></li>
+          </ul>
+      </li>
+-->
+        <li class="nav-item">
+          <a class="nav-link" href="/mainpost">Post</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/" (click)="logout()">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
