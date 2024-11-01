@@ -54,17 +54,5 @@ export class PostService {
       withCredentials: true
     });
   }
-
-  // Método opcional para manejar paginación
-  getPostsPaginated(page: number, size: number): Observable<any> {
-    const params = new HttpParams()
-      .set('page', page.toString())
-      .set('size', size.toString());
-
-    return this.http.get(`${this.Url}/api/posts/paginated`, {
-      params: params,
-      withCredentials: true
-    });
-  }
 }
 
