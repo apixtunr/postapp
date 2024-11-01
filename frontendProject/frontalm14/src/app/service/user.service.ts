@@ -1,6 +1,5 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { User } from '../entity/user';
 import { environment } from '../../environments/environment';
 
@@ -8,41 +7,29 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class UserService {
+
+  constructor(private http:HttpClient) { }
   private Url = environment.Url;
 
-  // Opciones de HTTP generales con credenciales
-  private httpOptionsWithCredentials = {
+  private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }),
-    withCredentials: true
+    withCredentials: true  
   };
 
-  // Opciones de HTTP sin credenciales (útil para login)
-  private httpOptionsDefault = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
-
-  constructor(private http: HttpClient) { }
-
-  // Método para registrar usuarios
-  addUsers(user: User): Observable<User> {
-    return this.http.post<User>(
-      `${this.Url}/api/create_users`, 
-      user, 
-      this.httpOptionsWithCredentials
-    );
+  addUsers(user:User)
+  {
+    return this.http.post<User>(this.Url+"/api/create_users",user);
   }
 
-  // Método de login
-  login(user: User): Observable<User> {
-    return this.http.post<User>(
-      `${this.Url}/user/login`, 
-      user, 
-      this.httpOptionsDefault
-    );
+  login(user: User){
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<User>(this.Url + "/user/login", user, httpOptions);
   }
 }
