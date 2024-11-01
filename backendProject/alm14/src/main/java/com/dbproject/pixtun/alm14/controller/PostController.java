@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("api/posts")
-@CrossOrigin(origins = "http://localhost:5545")
+@CrossOrigin(origins = "http://149.50.145.214:5545")
 public class PostController {
     @Autowired
     private PostService postService;

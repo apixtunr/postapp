@@ -10,7 +10,7 @@ import com.dbproject.pixtun.alm14.model.entity.User;
 import com.dbproject.pixtun.alm14.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5545")
+@CrossOrigin(origins = "http://149.50.145.214:5545")
 public class UserController {
     @Autowired
     private UserService userService;
