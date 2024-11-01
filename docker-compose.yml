@@ -46,8 +46,6 @@ services:
       - "5545:80"
     depends_on:
       - springboot-app
-    environment:
-      - API_URL=http://springboot-app:9090
     networks:
       - redProyecto
 
