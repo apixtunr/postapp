@@ -1,0 +1,13 @@
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/Alm14Application.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/controller/ComentarioController.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/controller/PostController.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/controller/UserController.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/model/entity/Comentario.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/model/entity/Post.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/model/entity/User.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/model/repository/ComentarioRepository.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/model/repository/PostRepository.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/model/repository/UserRepository.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/service/ComentarioService.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/service/PostService.java
+/home/alvaroprojects/Documentos/PROYECTO SISTEMAS OPERATIVOS/backendProject/alm14/src/main/java/com/dbproject/pixtun/alm14/service/UserService.java
