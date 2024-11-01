@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -7,30 +7,64 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class PostService {
-
   private Url = environment.Url;
 
   constructor(private http: HttpClient) { }
   
+  // Método para crear un nuevo post
   createNewPost(post: any): Observable<any> {
-    return this.http.post(this.Url + "/api/posts", post);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post(`${this.Url}/api/posts`, post, {
+      headers: headers,
+      withCredentials: true
+    });
   }
 
-  getAllPosts(): Observable<any>{
-    return this.http.get(this.Url + "/api/posts");
+  // Método para obtener todos los posts
+  getAllPosts(): Observable<any> {
+    return this.http.get(`${this.Url}/api/posts`, {
+      withCredentials: true
+    });
   }
 
-  getPostById(postId: number): Observable<any>{
-    return this.http.get(this.Url + "/api/posts/" + postId);
+  // Método para obtener un post por ID
+  getPostById(postId: number): Observable<any> {
+    return this.http.get(`${this.Url}/api/posts/${postId}`, {
+      withCredentials: true
+    });
   }
 
-  likePost(postId: number): Observable<any>{
-    return this.http.put(this.Url + "/api/posts/" + postId+"/meGusta", {});
+  // Método para dar like a un post
+  likePost(postId: number): Observable<any> {
+    return this.http.put(`${this.Url}/api/posts/${postId}/meGusta`, {}, {
+      withCredentials: true
+    });
   }
 
-  searchByName(name: string): Observable<any>{
-    return this.http.get(this.Url + "/api/posts/buscar/" + name);
+  // Método para buscar posts por nombre
+  searchByName(name: string): Observable<any> {
+    // Usar HttpParams para manejar parámetros de búsqueda
+    const params = new HttpParams().set('nombre', name);
+
+    return this.http.get(`${this.Url}/api/posts/buscar`, {
+      params: params,
+      withCredentials: true
+    });
   }
 
+  // Método opcional para manejar paginación
+  getPostsPaginated(page: number, size: number): Observable<any> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+
+    return this.http.get(`${this.Url}/api/posts/paginated`, {
+      params: params,
+      withCredentials: true
+    });
+  }
 }
 
