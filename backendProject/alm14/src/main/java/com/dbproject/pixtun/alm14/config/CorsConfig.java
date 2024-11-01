@@ -14,9 +14,10 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://149.50.145.214:5545")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Incluye OPTIONS para preflight
+                        .allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "Accept") // Headers específicos
+                        .exposedHeaders("Authorization") // Exponer headers si es necesario
+                        .allowCredentials(true); // Permitir credenciales
             }
         };
     }
