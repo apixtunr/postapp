@@ -1,35 +1,70 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+ providedIn: 'root'
 })
 export class PostService {
+ private Url = environment.Url;
+ 
+ constructor(private http: HttpClient) { }
+ 
+ createNewPost(post: any): Observable<any> {
+   const headers = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Accept': 'application/json'
+   });
 
-  private Url = environment.Url;
+   return this.http.post(`${this.Url}/api/posts`, post, {
+     headers,
+     withCredentials: true
+   });
+ }
 
-  constructor(private http: HttpClient) { }
-  
-  createNewPost(post: any): Observable<any> {
-    return this.http.post(this.Url + "/api/posts", post);
-  }
+ getAllPosts(): Observable<any> {
+   const headers = new HttpHeaders({
+     'Accept': 'application/json'
+   });
 
-  getAllPosts(): Observable<any>{
-    return this.http.get(this.Url + "/api/posts");
-  }
+   return this.http.get(`${this.Url}/api/posts`, {
+     headers,
+     withCredentials: true
+   });
+ }
 
-  getPostById(postId: number): Observable<any>{
-    return this.http.get(this.Url + "/api/posts/" + postId);
-  }
+ getPostById(postId: number): Observable<any> {
+   const headers = new HttpHeaders({
+     'Accept': 'application/json'
+   });
 
-  likePost(postId: number): Observable<any>{
-    return this.http.put(this.Url + "/api/posts/" + postId+"/meGusta", {});
-  }
+   return this.http.get(`${this.Url}/api/posts/${postId}`, {
+     headers,
+     withCredentials: true
+   });
+ }
 
-  searchByName(name: string): Observable<any>{
-    return this.http.get(this.Url + "/api/posts/buscar/" + name);
-  }
+ likePost(postId: number): Observable<any> {
+   const headers = new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Accept': 'application/json'
+   });
 
+   return this.http.put(`${this.Url}/api/posts/${postId}/meGusta`, {}, {
+     headers,
+     withCredentials: true
+   });
+ }
+
+ searchByName(name: string): Observable<any> {
+   const headers = new HttpHeaders({
+     'Accept': 'application/json'
+   });
+
+   return this.http.get(`${this.Url}/api/posts/buscar/${name}`, {
+     headers,
+     withCredentials: true
+   });
+ }
 }
