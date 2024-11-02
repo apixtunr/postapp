@@ -4,32 +4,37 @@ import { User } from '../entity/user';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+ providedIn: 'root'
 })
 export class UserService {
+ private Url = environment.Url;
+ private httpOptions = {
+   headers: new HttpHeaders({
+     'Content-Type': 'application/json',
+     'Accept': 'application/json'
+   }),
+   withCredentials: true
+ };
 
-  constructor(private http:HttpClient) { }
-  private Url = environment.Url;
+ constructor(private http: HttpClient) { }
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }),
-    withCredentials: true  
-  };
+ addUsers(user: User) {
+   return this.http.post<User>(`${this.Url}/api/create_users`, user, {
+     headers: new HttpHeaders({
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'  
+     }),
+     withCredentials: true
+   });
+ }
 
-  addUsers(user:User)
-  {
-    return this.http.post<User>(this.Url+"/api/create_users",user);
-  }
-
-  login(user: User){
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-    return this.http.post<User>(this.Url + "/api/user/login", user, httpOptions);
-  }
+ login(user: User) {
+   return this.http.post<User>(`${this.Url}/api/user/login`, user, {
+     headers: new HttpHeaders({
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'
+     }),
+     withCredentials: true
+   });
+ }
 }
