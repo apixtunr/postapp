@@ -21,12 +21,6 @@ public class CorsConfig {
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
-                registry.addMapping("/user/**")  // Agrega esto para las rutas de usuario
-                        .allowedOrigins(
-                    "http://vps-4501634-x.dattaweb.com:5545",
-                    "http://vps-4501634-x.dattaweb.com",
-                    "http://vps-4501634-x.dattaweb.com:80"
-                )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
