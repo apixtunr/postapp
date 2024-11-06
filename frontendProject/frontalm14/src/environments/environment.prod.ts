@@ -1,6 +1,6 @@
 // src/environments/environment.prod.ts
 export const environment = {
     production: true,
-     Url: 'http://contenedor-Backend:9090' 
+     Url: 'https://vps-4501634-x.dattaweb.com:5545'
   };
   
