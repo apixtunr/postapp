@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
-@CrossOrigin(origins = "https://vps-4501634-x.dattaweb.com:5545")
+@CrossOrigin(origins = "http://vps-4501634-x.dattaweb.com:5545")
 @RequestMapping("/api/")
 public class ComentarioController {
     @Autowired
