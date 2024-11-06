@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
+@CrossOrigin(origins = "https://vps-4501634-x.dattaweb.com:5545")
 @RequestMapping("api/posts")
 public class PostController {
     @Autowired
