@@ -14,6 +14,9 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
+                            "http://149.50.145.214",
+                            "http://149.50.145.214:5545",
+                            "https://149.50.145.214",
                             "http://vps-4501634-x.dattaweb.com",
                             "http://vps-4501634-x.dattaweb.com:5545",
                             "https://vps-4501634-x.dattaweb.com"
