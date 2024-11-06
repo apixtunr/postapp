@@ -43,8 +43,7 @@ services:
       dockerfile: Dockerfile
     container_name: contenedor-Frontend
     ports:
-      - "80:80"      # Cambia a puerto 80 estándar
-      - "5545:5545"  # Mantén este si es necesario
+      - "80:80"
     depends_on:
       - springboot-app
     networks:
@@ -56,3 +55,4 @@ volumes:
 networks:
   redProyecto:
     driver: bridge
+
