@@ -38,16 +38,16 @@ services:
       - redProyecto
 
   frontend:
-    build:
-      context: ./frontendProject/frontalm14
-      dockerfile: Dockerfile
-    container_name: contenedor-Frontend
-    ports:
-      - "80:80"
-    depends_on:
-      - springboot-app
-    networks:
-      - redProyecto
+  build:
+    context: ./frontendProject/frontalm14
+    dockerfile: Dockerfile
+  container_name: contenedor-Frontend
+  ports:
+    - "5545:80"
+  depends_on:
+    - springboot-app
+  networks:
+    - redProyecto
 
 volumes:
   mysql-data:
