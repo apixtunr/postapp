@@ -14,13 +14,10 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
-                    "http://vps-4501634-x.dattaweb.com:5545",
-                    "http://vps-4501634-x.dattaweb.com",
-                    "http://vps-4501634-x.dattaweb.com:80"
-                )
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
+                            "http://vps-4501634-x.dattaweb.com",
+                            "http://vps-4501634-x.dattaweb.com:5545",
+                            "https://vps-4501634-x.dattaweb.com"
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
@@ -28,4 +25,5 @@ public class CorsConfig {
         };
     }
 }
+
 
